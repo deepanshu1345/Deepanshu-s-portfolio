@@ -2,7 +2,6 @@
 
 A modern, responsive personal portfolio website showcasing Deepanshu's skills, experience, projects, and contact information.
 
-![Portfolio Screenshot](screenshot.png)
 
 ## Features
 
