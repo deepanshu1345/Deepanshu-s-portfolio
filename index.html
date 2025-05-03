@@ -3,93 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepanshu's Portfolio</title>
+    <meta name="description" content="Deepanshu Lakde - Software Developer Portfolio">
+    <meta name="keywords" content="software developer, web development, Python, Flask, MongoDB, React.js, Node.js">
+    <meta name="author" content="Deepanshu Lakde">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Deepanshu Lakde - Portfolio">
+    <meta property="og:description" content="Software Developer specializing in web applications and backend development">
+    <meta property="og:type" content="website">
+
+    <title>Deepanshu Lakde | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+    <!-- Theme color for browser -->
+    <meta name="theme-color" content="#1976D2">
 </head>
 <body>
+<div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+    </label>
+    <span class="theme-label"><i class="fas fa-moon"></i></span>
+</div>
+
 <header>
-    <h1>Deepanshu Lakde</h1>
-    <p>Software Developer | Web Enthusiast</p>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <div class="header-content">
+        <h1>Deepanshu Lakde</h1>
+        <p class="tagline">Software Developer | Web Enthusiast</p>
+    </div>
+    <nav class="main-nav">
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+            <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+            <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
     </nav>
 </header>
 
-<section style="margin-top: 50px;" id="about">
-    <h2>About Me</h2>
-    <p>I'm a passionate software developer with experience in Python, Flask, and MongoDB. Currently interning at Assimilate Technologies, I aim to build scalable and efficient web applications.</p>
-</section>
+<main class="container">
+    <section id="about" class="section-container">
+        <div class="section-header">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+        </div>
+        <div class="section-content">
+            <p>I'm a passionate software developer with experience in Python, Flask, and MongoDB. Currently interning at Assimilate Technologies, I aim to build scalable and efficient web applications.</p>
+            <div class="skills-container">
+                <h3>Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-item"><i class="fab fa-python"></i> Python</div>
+                    <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="skill-item"><i class="fab fa-react"></i> React.js</div>
+                    <div class="skill-item"><i class="fab fa-node-js"></i> Node.js</div>
+                    <div class="skill-item"><i class="fas fa-database"></i> MongoDB</div>
+                    <div class="skill-item"><i class="fas fa-server"></i> Flask</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="experience">
-    <h2>Experience</h2>
-    <h3>Assimilate Technologies - Intern (Jan 2025 - Present)</h3>
-    <p>Working on backend development, API integrations, and database management.</p>
+    <section id="experience" class="section-container">
+        <div class="section-header">
+            <h2><i class="fas fa-briefcase"></i> Experience</h2>
+        </div>
+        <div class="section-content">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Assimilate Technologies - Intern</h3>
+                        <p>Working on backend development, API integrations, and database management.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Jul 2024 - Dec 2024</div>
+                    <div class="timeline-content">
+                        <h3>Signmus Technologies - Software Developer Intern</h3>
+                        <p>Developed and optimized web applications, focusing on performance and usability.</p>
+                        <ul>
+                            <li>Worked with React.js and Node.js to build dynamic user interfaces.</li>
+                            <li>Implemented RESTful APIs for seamless data exchange between frontend and backend.</li>
+                            <li>Enhanced application security and performance through code optimization.</li>
+                            <li>Collaborated with cross-functional teams to deliver high-quality software solutions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h3>Signmus Technologies - Software Developer Intern (Jul 2024 - Dec 2024)</h3>
-    <p>Developed and optimized web applications, focusing on performance and usability.</p>
-    <ul>
-        <li>Worked with React.js and Node.js to build dynamic user interfaces.</li>
-        <li>Implemented RESTful APIs for seamless data exchange between frontend and backend.</li>
-        <li>Enhanced application security and performance through code optimization.</li>
-        <li>Collaborated with cross-functional teams to deliver high-quality software solutions.</li>
-    </ul>
-</section>
+    <section id="education" class="section-container">
+        <div class="section-header">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+        </div>
+        <div class="section-content">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - 2025</div>
+                    <div class="timeline-content">
+                        <h3>PR Pote Patil Institute of Engineering and Management, Amravati</h3>
+                        <p>Master of Computer Applications (MCA)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 - 2023</div>
+                    <div class="timeline-content">
+                        <h3>Sant Gadge Baba Amravati University</h3>
+                        <p>Bachelor of Computer Applications (BCA)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="education">
-    <h2>Education</h2>
-    <h3>PR Pote Patil Institute of Engineering and Management, Amravati</h3>
-    <p>Master of Computer Applications (MCA) | 2023 - 2025</p>
+    <section id="projects" class="section-container">
+        <div class="section-header">
+            <h2><i class="fas fa-code"></i> Projects</h2>
+        </div>
+        <div class="section-content">
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Resume Refining</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>A marketplace app inspired by HRMS platforms like Frappe. It provides tools for refining resumes and categorizing applicant profiles.</p>
+                        <ul>
+                            <li>Developed using MariaDB and Frappe's API.</li>
+                            <li>Features include resume parsing, filtering, and profile recommendations.</li>
+                            <li>Built for recruiters to streamline hiring processes.</li>
+                        </ul>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-tag">MariaDB</span>
+                        <span class="project-tag">Frappe</span>
+                        <span class="project-tag">HRMS</span>
+                    </div>
+                </div>
 
-    <h3>Sant Gadge Baba Amravati University </h3>
-    <p>Bachelor of Computer Applications (BCA) | 2020 - 2023</p>
-</section>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Halt Hunger</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>A Flask-based cafe ordering system designed to streamline order management.</p>
+                        <ul>
+                            <li>Allows users to place and track orders efficiently.</li>
+                            <li>Implemented user authentication and order history tracking.</li>
+                            <li>Designed with a simple yet effective UI for seamless experience.</li>
+                        </ul>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-tag">Flask</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Web App</span>
+                    </div>
+                </div>
 
-<section id="projects">
-    <h2>Projects</h2>
-    <div>
-        <h3>Resume Refining</h3>
-        <p>A marketplace app inspired by HRMS platforms like Frappe. It provides tools for refining resumes and categorizing applicant profiles.</p>
-        <ul>
-            <li>Developed using MariaDB and Frappe's API.</li>
-            <li>Features include resume parsing, filtering, and profile recommendations.</li>
-            <li>Built for recruiters to streamline hiring processes.</li>
-        </ul>
-    </div>
-    <div>
-        <h3>Halt Hunger</h3>
-        <p>A Flask-based cafe ordering system designed to streamline order management.</p>
-        <ul>
-            <li>Allows users to place and track orders efficiently.</li>
-            <li>Implemented user authentication and order history tracking.</li>
-            <li>Designed with a simple yet effective UI for seamless experience.</li>
-        </ul>
-    </div>
-    <div>
-        <h3>Dynamic Document Comparison</h3>
-        <p>A web application that compares uploaded PDFs against pre-stored documents and provides insights.</p>
-        <ul>
-            <li>Uses Flask for backend and JavaScript for frontend interactivity.</li>
-            <li>Analyzes document structure and highlights key differences.</li>
-            <li>Provides real-time suggestions without summarizing content.</li>
-        </ul>
-    </div>
-</section>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Dynamic Document Comparison</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>A web application that compares uploaded PDFs against pre-stored documents and provides insights.</p>
+                        <ul>
+                            <li>Uses Flask for backend and JavaScript for frontend interactivity.</li>
+                            <li>Analyzes document structure and highlights key differences.</li>
+                            <li>Provides real-time suggestions without summarizing content.</li>
+                        </ul>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-tag">Flask</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">PDF Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:deepanshulakde26@gamil.com">deepanshulakde26@gamil.com</a></p>
-    <p>GitHub: <a href="https://github.com/deepanshu1345" target="_blank">github.com/deepanshu1345</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/deepanshu-lakde-301b3a175" target="_blank">linkedin.com/in/deepanshu</a></p>
-</section>
+    <section id="contact" class="section-container">
+        <div class="section-header">
+            <h2><i class="fas fa-envelope"></i> Contact</h2>
+        </div>
+        <div class="section-content">
+            <div class="contact-grid">
+                <a href="mailto:deepanshulakde26@gamil.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>deepanshulakde26@gamil.com</span>
+                </a>
+                <a href="https://github.com/deepanshu1345" target="_blank" class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>github.com/deepanshu1345</span>
+                </a>
+                <a href="https://www.linkedin.com/in/deepanshu-lakde-301b3a175" target="_blank" class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/deepanshu</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
 
 <footer>
-    <p>&copy; 2025 Deepanshu Lakde. All rights reserved.</p>
+    <div class="footer-content">
+        <p>&copy; 2025 Deepanshu Lakde. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://github.com/deepanshu1345" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/deepanshu-lakde-301b3a175" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
 </footer>
+
+<!-- Scripts -->
+<script src="index.js"></script>
 </body>
 </html>

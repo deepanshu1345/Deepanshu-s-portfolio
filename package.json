@@ -1,0 +1,40 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Deepanshu Lakde's personal portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve -s .",
+    "dev": "live-server --port=3000",
+    "lint": "eslint .",
+    "format": "prettier --write \"**/*.{html,js,css,json}\"",
+    "build": "npm run lint && npm run minify",
+    "minify": "npm run minify:js && npm run minify:css",
+    "minify:js": "uglifyjs index.js -o index.min.js",
+    "minify:css": "cleancss -o styles.min.css styles.css"
+  },
+  "keywords": [
+    "portfolio",
+    "personal-website",
+    "web-development"
+  ],
+  "author": "Deepanshu Lakde",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "eslint": "^8.42.0",
+    "live-server": "^1.2.2",
+    "prettier": "^2.8.8",
+    "serve": "^14.2.0",
+    "uglify-js": "^3.17.4"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    ">0.3%",
+    "not dead",
+    "not op_mini all"
+  ]
+}
