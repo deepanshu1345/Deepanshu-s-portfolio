@@ -51,10 +51,12 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.6;
-    transition: var(--transition);
+    line-height: 1.7;
+    letter-spacing: 0.4px;
 }
 
 a {
@@ -109,6 +111,9 @@ ul li:hover {
     padding: 5px 10px;
     border-radius: 20px;
     box-shadow: var(--box-shadow);
+    margin-top: var(--spacing-sm);
+    justify-content: center;
+    background: transparent;
 }
 
 .theme-switch {
@@ -245,13 +250,17 @@ header {
 /* Section Containers */
 .section-container {
     padding: var(--spacing-lg);
-    max-width: var(--section-width);
     margin: var(--spacing-lg) auto;
-    background: var(--card-bg);
+    max-width: var(--section-width);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    transition: transform 0.3s, box-shadow 0.3s;
-    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-theme="dark"] .section-container {
+    background: rgba(30, 30, 30, 0.7);
 }
 
 .section-container:hover {
@@ -443,6 +452,10 @@ header {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     transition: transform 0.3s;
+    overflow-wrap: break-word;   /* Breaks long words */
+    word-wrap: break-word;
+    word-break: break-word;      /* Ensures long URLs/emails break */
+    min-width: 0;
 }
 
 .contact-item:hover {
@@ -567,4 +580,86 @@ footer {
     }
 }
 
+.fab-resume {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    padding: 16px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
 
+.fab-resume:hover {
+    background: var(--secondary-color);
+    transform: scale(1.08);
+}
+
+/* Tooltip styling */
+.fab-resume .tooltip {
+    position: absolute;
+    right: 110%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    box-shadow: var(--box-shadow);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-weight: 500;
+}
+
+.fab-resume:hover .tooltip {
+    opacity: 1;
+    transform: translateY(-50%) translateX(-5px);
+}
+
+/* Triangle arrow */
+.fab-resume .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--card-bg);
+}
+
+/* Dark mode tooltip fix */
+[data-theme="dark"] .fab-resume .tooltip {
+    background-color: #2c2c2c;
+    color: #fff;
+}
+
+[data-theme="dark"] .fab-resume .tooltip::after {
+    border-color: transparent transparent transparent #2c2c2c;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .fab-resume {
+        bottom: 15px;
+        right: 15px;
+        padding: 14px;
+        font-size: 1.3rem;
+    }
+
+    .fab-resume .tooltip {
+        display: none; /* Hide tooltip on very small screens */
+    }
+}

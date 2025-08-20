@@ -44,7 +44,7 @@ A modern, responsive personal portfolio website showcasing Deepanshu's skills, e
 To start the development server:
 
 ```bash
-npm run dev
+  npm run dev
 ```
 
 This will start a local server at http://localhost:3000
@@ -54,7 +54,7 @@ This will start a local server at http://localhost:3000
 To build optimized files for production:
 
 ```bash
-npm run build
+  npm run build
 ```
 
 This will create minified versions of the CSS and JavaScript files.
@@ -64,7 +64,7 @@ This will create minified versions of the CSS and JavaScript files.
 To serve the production build:
 
 ```bash
-npm start
+  npm start
 ```
 
 ## Project Structure

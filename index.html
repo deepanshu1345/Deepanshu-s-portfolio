@@ -26,14 +26,6 @@
     <meta name="theme-color" content="#1976D2">
 </head>
 <body>
-<div class="theme-switch-wrapper">
-    <label class="theme-switch" for="checkbox">
-        <input type="checkbox" id="checkbox" />
-        <div class="slider round"></div>
-    </label>
-    <span class="theme-label"><i class="fas fa-moon"></i></span>
-</div>
-
 <header>
     <div class="header-content">
         <h1>Deepanshu Lakde</h1>
@@ -51,6 +43,14 @@
             <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
             <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
             <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+                <span class="theme-label"><i class="fas fa-moon"></i></span>
+            </div>
         </ul>
     </nav>
 </header>
@@ -61,16 +61,23 @@
             <h2><i class="fas fa-user"></i> About Me</h2>
         </div>
         <div class="section-content">
-            <p>I'm a passionate software developer with experience in Python, Flask, and MongoDB. Currently interning at Assimilate Technologies, I aim to build scalable and efficient web applications.</p>
+            <p>
+                I'm a passionate developer with a focus on building clean, efficient, and scalable web applications.
+                 I enjoy solving real-world problems through code and continuously learning new technologies.
+                My experience spans backend development, APIs, and full-stack projects using tools like Python, Django, FastAPI, MongoDB, and modern JavaScript frameworks.
+                Currently exploring AI/ML and building personal projects to sharpen my skills.
+            </p>
             <div class="skills-container">
                 <h3>Skills</h3>
                 <div class="skills-grid">
                     <div class="skill-item"><i class="fab fa-python"></i> Python</div>
                     <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
-                    <div class="skill-item"><i class="fab fa-react"></i> React.js</div>
-                    <div class="skill-item"><i class="fab fa-node-js"></i> Node.js</div>
-                    <div class="skill-item"><i class="fas fa-database"></i> MongoDB</div>
+                    <div class="skill-item"><i class="fas fa-server"></i> Django</div>
                     <div class="skill-item"><i class="fas fa-server"></i> Flask</div>
+                    <div class="skill-item"><i class="fas fa-server"></i> FastAPI</div>
+                    <div class="skill-item"><i class="fas fa-database"></i> MongoDB</div>
+                    <div class="skill-item"><i class="fas fa-database"></i> MySQL</div>
+
                 </div>
             </div>
         </div>
@@ -83,10 +90,16 @@
         <div class="section-content">
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">Jan 2025 - Present</div>
+                    <div class="timeline-date">Jan 2025 - Jun 2025</div>
                     <div class="timeline-content">
                         <h3>Assimilate Technologies - Intern</h3>
-                        <p>Working on backend development, API integrations, and database management.</p>
+                        <p>Worked on backend development, API integrations, and database management.</p>
+                        <ul>
+                            <li>Designed and integrated core modules in Horilla HRMS and the ResumeRefine AI platform using Django and Frappe, improving data efficiency across enterprise features by 30%.</li>
+                            <li>Developed scalable backend functionalities in Django and Frappe for key HRMS processes such as employee transfers, interview feedback, and resume parsing.</li>
+                            <li>Optimized complex queries in PostgreSQL and MongoDB, reducing API response time and improving data handling.</li>
+                            <li>Built and maintained RESTful APIs for smooth backend–frontend communication across modules.</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -173,25 +186,6 @@
                         <span class="project-tag">Web App</span>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Dynamic Document Comparison</h3>
-                    </div>
-                    <div class="project-body">
-                        <p>A web application that compares uploaded PDFs against pre-stored documents and provides insights.</p>
-                        <ul>
-                            <li>Uses Flask for backend and JavaScript for frontend interactivity.</li>
-                            <li>Analyzes document structure and highlights key differences.</li>
-                            <li>Provides real-time suggestions without summarizing content.</li>
-                        </ul>
-                    </div>
-                    <div class="project-footer">
-                        <span class="project-tag">Flask</span>
-                        <span class="project-tag">JavaScript</span>
-                        <span class="project-tag">PDF Analysis</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -231,6 +225,10 @@
 
 <!-- Scripts -->
 <script src="index.js"></script>
+<a href="resume.pdf" download class="fab-resume" title="Download Resume">
+    <i class="fas fa-file-download"></i>
+    <span class="tooltip">Download Resume</span>
+</a>
 </body>
 </html>
 
