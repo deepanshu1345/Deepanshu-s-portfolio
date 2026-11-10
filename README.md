@@ -1,96 +1,44 @@
-# Deepanshu Lakde's Portfolio
+# Deepanshu Lakde — AI Engineer Portfolio
 
-A modern, responsive personal portfolio website showcasing Deepanshu's skills, experience, projects, and contact information.
+Modern portfolio built with **React + TypeScript + Vite**, featuring a **RAG chatbot that answers questions about my resume**. It runs entirely in the browser: no paid APIs, no server, no keys.
 
+## How the chatbot works
 
-## Features
+1. **Knowledge**: `src/data/resume.ts` (single source of truth for site + bot) is split into chunks by `src/rag/knowledge.ts`.
+2. **Hybrid retrieval**: BM25 keyword search (`engine.ts`) fused with semantic search using `all-MiniLM-L6-v2` embeddings via Transformers.js (`embeddings.ts`, ~23 MB, runs on any device).
+3. **Generation**: the browser sends the question + retrieved chunk ids to a Cloudflare Worker (`worker/`), which builds the prompt from those resume chunks and streams an answer from Llama 3.1 8B on Workers AI (free tier).
+4. **Fallback**: if the Worker isn't configured, is rate-limited or is out of free quota, the bot answers with the best-matching resume passage.
 
-- **Responsive Design**: Optimized for all device sizes from mobile to desktop
-- **Dark Mode**: Toggle between light and dark themes with user preference detection
-- **Modern UI**: Clean, professional design with animations and transitions
-- **Accessibility**: Semantic HTML and proper contrast for better accessibility
-- **Performance Optimized**: Fast loading with minimal dependencies
-
-## Technologies Used
-
-- **HTML5**: Semantic markup for better structure and accessibility
-- **CSS3**: Modern styling with variables, flexbox, and grid
-- **JavaScript**: Interactive features and animations
-- **Intersection Observer API**: For scroll-based animations
-- **LocalStorage API**: For saving user preferences
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm (comes with Node.js)
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/deepanshu1345/portfolio.git
-   cd portfolio
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-### Development
-
-To start the development server:
+## Deploy the chat API (Cloudflare Workers AI, free)
 
 ```bash
-  npm run dev
+cd worker
+npm install
+npx wrangler login        # opens the browser once
+npx wrangler deploy       # prints https://resume-chat.<you>.workers.dev
 ```
 
-This will start a local server at http://localhost:3000
+Then in Vercel → Project → Settings → **Environment Variables**, add `VITE_CHAT_API` = that URL and redeploy. Add the Vercel site URL to `ALLOWED_ORIGINS` and run `npx wrangler deploy` again. For local dev, put `VITE_CHAT_API=<url>` in `.env.local`. Allowed site origins are set in `worker/wrangler.toml` (`ALLOWED_ORIGINS`).
 
-### Building for Production
+Sources and relevance scores are shown under each answer.
 
-To build optimized files for production:
+## Update the resume
+
+1. Edit `src/data/resume.ts`.
+2. Replace `public/Deepanshu_Lakde_Resume.pdf`.
+3. Run `npm run test:rag` to check retrieval still finds the right chunks.
+
+## Develop
 
 ```bash
-  npm run build
+npm install
+npm run dev        # http://localhost:5173
+npm run build      # outputs dist/
+npm run test:rag   # retrieval check (add -- --semantic for hybrid)
 ```
 
-This will create minified versions of the CSS and JavaScript files.
-
-### Deployment
-
-To serve the production build:
-
-```bash
-  npm start
-```
-
-## Project Structure
-
-```
-portfolio/
-├── index.html          # Main HTML file
-├── styles.css          # CSS styles
-├── index.js            # JavaScript functionality
-├── package.json        # Project dependencies and scripts
-└── README.md           # Project documentation
-```
-
-## Customization
-
-- **Colors**: Edit the CSS variables in the `:root` selector in `styles.css`
-- **Content**: Update the information in `index.html`
-- **Animations**: Modify the animation settings in `index.js`
+The live site is deployed by **Vercel** from `master`. GitHub Actions (`.github/workflows/ci.yml`) only runs `test:rag` and the build on every push.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Author
-
-**Deepanshu Lakde**
-- GitHub: [github.com/deepanshu1345](https://github.com/deepanshu1345)
-- LinkedIn: [linkedin.com/in/deepanshu-lakde-301b3a175](https://www.linkedin.com/in/deepanshu-lakde-301b3a175)
-
+MIT © [Deepanshu Lakde](https://github.com/deepanshu1345)
