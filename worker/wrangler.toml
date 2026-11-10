@@ -15,4 +15,4 @@ namespace_id = "1001"
   period = 60
 
 [vars]
-ALLOWED_ORIGINS = "https://deepanshu1345.github.io,http://localhost:5173,http://localhost:4173"
+ALLOWED_ORIGINS = "https://deepanshu-s-portfolio-one.vercel.app,https://deepanshu1345.github.io,http://localhost:5173,http://localhost:4173"
