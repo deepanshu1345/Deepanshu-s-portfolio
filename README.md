@@ -18,7 +18,7 @@ npx wrangler login        # opens the browser once
 npx wrangler deploy       # prints https://resume-chat.<you>.workers.dev
 ```
 
-Then in GitHub → Settings → Secrets and variables → Actions → **Variables**, add `CHAT_API_URL` = that URL and re-run the Pages workflow. For local dev, put `VITE_CHAT_API=<url>` in `.env.local`. Allowed site origins are set in `worker/wrangler.toml` (`ALLOWED_ORIGINS`).
+Then in Vercel → Project → Settings → **Environment Variables**, add `VITE_CHAT_API` = that URL and redeploy. Add the Vercel site URL to `ALLOWED_ORIGINS` and run `npx wrangler deploy` again. For local dev, put `VITE_CHAT_API=<url>` in `.env.local`. Allowed site origins are set in `worker/wrangler.toml` (`ALLOWED_ORIGINS`).
 
 Sources and relevance scores are shown under each answer.
 
@@ -37,7 +37,7 @@ npm run build      # outputs dist/
 npm run test:rag   # retrieval check (add -- --semantic for hybrid)
 ```
 
-Pushing to `master` builds and deploys to GitHub Pages via `.github/workflows/static.yml`.
+The live site is deployed by **Vercel** from `master`. GitHub Actions (`.github/workflows/ci.yml`) only runs `test:rag` and the build on every push.
 
 ## License
 

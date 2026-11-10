@@ -17,7 +17,7 @@ npm run test:rag                  # keyword (BM25) retrieval check
 npm run test:rag -- --semantic    # hybrid check; downloads the embedding model
 ```
 
-There is no linter or unit test framework. `test:rag` is the only test; it is a table of `[question, expected top chunk id]` cases in `scripts/rag-check.ts`. CI runs `test:rag` then `build` on push to `master` and deploys `dist/` to GitHub Pages (`.github/workflows/static.yml`), so `vite.config.ts` uses `base: "./"`.
+There is no linter or unit test framework. `test:rag` is the only test; it is a table of `[question, expected top chunk id]` cases in `scripts/rag-check.ts`. CI (`.github/workflows/ci.yml`) runs `test:rag` then `build` on every push; it does not deploy. The live site is deployed by Vercel from `master`, with `VITE_CHAT_API` set in Vercel's environment variables.
 
 Imports use explicit `.ts`/`.tsx` extensions (`allowImportingTsExtensions`, `verbatimModuleSyntax` → use `import type` for types).
 
