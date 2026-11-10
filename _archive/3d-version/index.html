@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deepanshu Lakde — AI Engineer</title>
+  <meta name="title" content="Deepanshu Lakde — AI Engineer">
+  <meta name="description" content="Portfolio of Deepanshu Lakde — AI Engineer building LLM applications, RAG pipelines, and production-grade AI backends.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Deepanshu Lakde — AI Engineer">
+  <meta property="og:description" content="Selected Works & AI Engineering Portfolio.">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 3D WebGL Canvas Layer -->
+  <div id="webgl-canvas-container"></div>
+
+  <!-- UI HUD Overlay Layer -->
+  <div class="hud-overlay-wrapper">
+    
+    <!-- Top Navigation Header -->
+    <header class="top-header">
+      <a href="#" class="brand-monogram" onclick="openCartridge('about'); return false;">
+        DL
+      </a>
+
+      <div class="header-actions">
+        <!-- Resume PDF Button -->
+        <a href="resume.pdf" download class="icon-box-btn" title="Download Resume PDF" aria-label="Resume">
+          <i class="far fa-file-alt"></i>
+        </a>
+
+        <!-- Contact / Message Button -->
+        <button class="icon-box-btn" onclick="openCartridge('contact')" title="Get in touch" aria-label="Contact">
+          <i class="far fa-comment-dots"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Bottom Footer Bar -->
+    <footer class="bottom-footer-bar">
+      <!-- Ambient Music Widget (Mridul style) -->
+      <div class="ambient-audio-widget" id="ambient-audio-toggle" title="Toggle background ambient sound">
+        <div class="audio-play-btn" id="audio-play-icon">
+          <i class="fas fa-play"></i>
+        </div>
+        <div class="audio-text-col">
+          <div class="audio-title-row">
+            <div class="sound-bars" aria-hidden="true">
+              <div class="sound-bar"></div>
+              <div class="sound-bar"></div>
+              <div class="sound-bar"></div>
+              <div class="sound-bar"></div>
+            </div>
+            <span class="audio-title">A little background vibe</span>
+          </div>
+          <div class="audio-subtext-row">
+            <span>In flight entertainment</span>
+            <i class="fab fa-soundcloud"></i>
+            <span>SoundCloud</span>
+          </div>
+        </div>
+        <div class="audio-controls-right" aria-hidden="true">
+          <i class="fas fa-step-backward"></i>
+          <i class="fas fa-step-forward"></i>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ==================== CARTRIDGE DETAIL INSPECTION MODAL ==================== -->
+  <div class="cartridge-drawer-backdrop" id="cartridge-modal-backdrop" onclick="handleBackdropClick(event)">
+    <div class="cartridge-drawer-modal">
+      
+      <!-- Modal Header -->
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <span class="drawer-cartridge-badge" id="modal-badge">01 // PROFILE</span>
+          <h2 class="drawer-title" id="modal-title">About Deepanshu Lakde</h2>
+        </div>
+        <button class="drawer-close-btn" onclick="closeCartridgeModal()" aria-label="Close modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Tabs to switch cartridges inside modal -->
+      <div class="drawer-tabs-bar">
+        <button class="drawer-tab-btn active" onclick="switchDrawerTab('about')" data-tab="about">01 About</button>
+        <button class="drawer-tab-btn" onclick="switchDrawerTab('experience')" data-tab="experience">02 Experience</button>
+        <button class="drawer-tab-btn" onclick="switchDrawerTab('skills')" data-tab="skills">03 Skills</button>
+        <button class="drawer-tab-btn" onclick="switchDrawerTab('stats')" data-tab="stats">04 Impact</button>
+        <button class="drawer-tab-btn" onclick="switchDrawerTab('education')" data-tab="education">05 Education</button>
+        <button class="drawer-tab-btn" onclick="switchDrawerTab('projects')" data-tab="projects">06 Work</button>
+        <button class="drawer-tab-btn" onclick="switchDrawerTab('contact')" data-tab="contact">07 Contact</button>
+      </div>
+
+      <!-- Modal Dynamic Body Content -->
+      <div class="drawer-body-content" id="modal-body-container">
+        <!-- Injected dynamically from resumeData.js -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="neon-toast" id="neon-toast">
+    <i class="fas fa-check"></i>
+    <span id="toast-text">Email copied to clipboard</span>
+  </div>
+
+  <!-- Libraries & Logic Scripts -->
+  <script src="lib/three.min.js"></script>
+  <script src="lib/gsap.min.js"></script>
+  <script src="resumeData.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
